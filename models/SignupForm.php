@@ -40,7 +40,7 @@ class SignupForm extends Model
             ['id_currency', 'required'],
             [['id_currency'], 'exist', 'skipOnError' => true, 'targetClass' => Currency::class, 'targetAttribute' => ['id_currency' => 'id']],
             ['phone', 'required'],
-            ['phone', 'string', 'max' => 255],
+            ['phone', 'string', 'min' => 11, 'max' => 12],
         ];
     }
     /**

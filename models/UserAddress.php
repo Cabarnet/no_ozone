@@ -49,10 +49,10 @@ class UserAddress extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_user' => 'Id User',
-            'id_city' => 'Id City',
-            'street' => 'Street',
-            'house_number' => 'House Number',
+            'id_user' => 'Пользователь',
+            'id_city' => 'Город',
+            'street' => 'Улица',
+            'house_number' => 'Номер дома',
         ];
     }
 

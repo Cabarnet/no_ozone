@@ -68,7 +68,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
-            'id_category' => 'Категори',
+            'id_category' => 'Категории',
             'id_photo' => 'Фото',
             'is_discount' => 'Есть ли скидка',
             'discount' => 'Скидка',

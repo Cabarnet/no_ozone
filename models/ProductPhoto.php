@@ -44,8 +44,8 @@ class ProductPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_product' => 'Id Product',
-            'photo' => 'Photo',
+            'id_product' => 'Продукт',
+            'photo' => 'Фото',
         ];
     }
 

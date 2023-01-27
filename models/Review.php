@@ -60,18 +60,18 @@ class Review extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_user' => 'Id User',
-            'pluses' => 'Pluses',
-            'minuses' => 'Minuses',
-            'description' => 'Description',
-            'id_photo' => 'Id Photo',
-            'id_video' => 'Id Video',
-            'rating' => 'Rating',
-            'status' => 'Status',
-            'id_like_rating' => 'Id Like Rating',
-            'date_of_creation' => 'Date Of Creation',
-            'date_of_update' => 'Date Of Update',
-            'author' => 'Author',
+            'id_user' => 'Пользователь',
+            'pluses' => 'Плюсы',
+            'minuses' => 'Минусы',
+            'description' => 'Описание',
+            'id_photo' => 'Фото',
+            'id_video' => 'Видео',
+            'rating' => 'Рейтинг',
+            'status' => 'Статус',
+            'id_like_rating' => 'Рейтинг лайков',
+            'date_of_creation' => 'Дата создания',
+            'date_of_update' => 'Дата обновления',
+            'author' => 'Автор',
         ];
     }
 

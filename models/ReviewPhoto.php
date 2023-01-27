@@ -43,8 +43,8 @@ class ReviewPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_review' => 'Id Review',
-            'photo' => 'Photo',
+            'id_review' => 'Обзор',
+            'photo' => 'Фото',
         ];
     }
 

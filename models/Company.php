@@ -50,13 +50,13 @@ class Company extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'inn' => 'Inn',
-            'photo' => 'Photo',
+            'name' => 'Название',
+            'inn' => 'Инн',
+            'photo' => 'Фото',
             'date_of_creation' => 'Date Of Creation',
             'date_of_update' => 'Date Of Update',
-            'author' => 'Author',
-            'id_user' => 'Id User',
+            'author' => 'Автор',
+            'id_user' => 'Пользователь',
         ];
     }
 

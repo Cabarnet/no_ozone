@@ -58,13 +58,13 @@ class Ordering extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_user' => 'Id User',
-            'id_cart' => 'Id Cart',
-            'id_address' => 'Id Address',
-            'id_user_card' => 'Id User Card',
-            'id_delivery' => 'Id Delivery',
-            'id_status' => 'Id Status',
-            'date' => 'Date',
+            'id_user' => 'Польователь',
+            'id_cart' => 'Корзина',
+            'id_address' => 'Адрес',
+            'id_user_card' => 'Карта',
+            'id_delivery' => 'Доставка',
+            'id_status' => 'Статус',
+            'date' => 'Дата',
         ];
     }
 

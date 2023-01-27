@@ -40,7 +40,7 @@ class UserRole extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'role' => 'Role',
+            'role' => 'Роль',
         ];
     }
 

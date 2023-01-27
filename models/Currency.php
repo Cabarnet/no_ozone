@@ -40,7 +40,7 @@ class Currency extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'currency' => 'Currency',
+            'currency' => 'Валюта',
         ];
     }
 

@@ -41,8 +41,8 @@ class OrderDelivery extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'variant' => 'Variant',
-            'price' => 'Price',
+            'variant' => 'Вариант доставки',
+            'price' => 'Цена',
         ];
     }
 

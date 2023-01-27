@@ -45,9 +45,9 @@ class UserCard extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'card_number' => 'Card Number',
-            'date' => 'Date',
-            'cvv' => 'Cvv',
+            'card_number' => 'Номер карты',
+            'date' => 'Дата на карте',
+            'cvv' => 'cvv',
         ];
     }
 

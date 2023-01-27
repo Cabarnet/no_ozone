@@ -41,8 +41,8 @@ class LikeRating extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'count_like' => 'Count Like',
-            'count_dislikes' => 'Count Dislikes',
+            'count_like' => 'Количество лайков',
+            'count_dislikes' => 'Количество дизлайков',
         ];
     }
 

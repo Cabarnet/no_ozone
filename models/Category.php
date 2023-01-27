@@ -40,7 +40,7 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'category' => 'Category',
+            'category' => 'Категории',
         ];
     }
 
