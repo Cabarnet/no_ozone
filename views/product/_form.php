@@ -24,13 +24,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rating')->textInput() ?>
-
-    <?= $form->field($model, 'date_of_creation')->textInput() ?>
-
-    <?= $form->field($model, 'date_of_update')->textInput() ?>
-
-    <?= $form->field($model, 'author')->textInput() ?>
+    <?= $form->field($model, 'author')->dropDownList(\yii\helpers\ArrayHelper::map(\app\models\User::find()->all(),'id', 'login')) ?>
 
     <?= $form->field($model, 'price')->textInput() ?>
 

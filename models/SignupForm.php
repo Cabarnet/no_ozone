@@ -43,6 +43,23 @@ class SignupForm extends Model
             ['phone', 'string', 'min' => 11, 'max' => 12],
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'login' => 'Логин',
+            'date_born' => 'Дата рождения',
+            'id_city' => 'Город',
+            'id_currency' => 'Валюта',
+            'password' => 'Пароль',
+            'phone' => 'Телефон',
+            'email' => 'Почта',
+        ];
+    }
+
     /**
      * Signs user up.
      *
