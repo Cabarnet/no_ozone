@@ -45,6 +45,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 'class' => 'navbar-nav mx-auto d-flex justify-content-between',
                 'style' => 'width: 85%'],
         'items' => [
+            ['label' => 'Пользователи', 'url' => ['/user/index']],
             ['label' => 'Домашняя страница', 'url' => ['/site/index']],
             ['label' => 'Каталог', 'url' => ['/product/index']],
 //            ['label' => 'О площадке', 'url' => ['/site/about']],
