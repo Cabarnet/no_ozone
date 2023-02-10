@@ -40,15 +40,17 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             'style' => 'font-family: CENTURY GOTHIC; font-size: 16px; font-weight: 100; padding: 8px; background-color: #000B1F',
         ],
     ]);
+
+
     echo Nav::widget([
         'options' => [
                 'class' => 'navbar-nav mx-auto d-flex justify-content-between',
                 'style' => 'width: 85%'],
         'items' => [
-            ['label' => 'Пользователи', 'url' => ['/user/index']],
+            ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible'=>Yii::$app->user->identity->id_role == 3],
             ['label' => 'Домашняя страница', 'url' => ['/site/index']],
             ['label' => 'Каталог', 'url' => ['/product/index']],
-//            ['label' => 'О площадке', 'url' => ['/site/about']],
+            ['label' => 'О площадке', 'url' => ['/site/about']],
             ['label' => 'Связь с нами', 'url' => ['/site/contact']],
             ['label' => 'Корзина', 'url' => ['/cart/index'], 'visible'=>!Yii::$app->user->isGuest],
             ['label' => 'Регистрация', 'url' => ['/site/signup'], 'visible'=>Yii::$app->user->isGuest],
@@ -66,6 +68,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     ]);
     NavBar::end();
     ?>
+
 </header>
 
 <main id="main" class="flex-shrink-0" role="main">

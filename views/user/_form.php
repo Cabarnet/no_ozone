@@ -12,11 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
+    <?= $form->field($model, 'id_role')->dropDownList(\yii\helpers\ArrayHelper::map(\app\models\AuthAssignment::find()->all(),'user_id', 'item_name')) ?>
 
-    <?= $form->field($model, 'login')->textInput() ?>
-
-    <?= $form->field($model, 'id_role')->dropDownList(\yii\helpers\ArrayHelper::map(\app\models\UserRole::find()->all(),'id', 'role')) ?>
+    <?= $form->field($model, 'id_city')->dropDownList(\yii\helpers\ArrayHelper::map(\app\models\City::find()->all(),'id', 'city')) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

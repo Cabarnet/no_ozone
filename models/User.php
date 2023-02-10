@@ -279,9 +279,9 @@ class User extends ActiveRecord implements IdentityInterface
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getRole()
+    public function getAuthAssignment()
     {
-        return $this->hasOne(UserRole::class, ['id' => 'id_role']);
+        return $this->hasOne(AuthAssignment::class, ['user_id' => 'id_role']);
     }
 
     /**

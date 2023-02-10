@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\User $model */
 
-$this->title = 'Update User: ' . $model->id;
+$this->title = 'Изменить: ' . $model->login;
 $this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="user-update">
