@@ -32,31 +32,32 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <header id="header">
     <?php
-    NavBar::begin([
-        'brandLabel' => "<img height='26px' src='../web/Logo.svg'>",
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-expand-md navbar-dark fixed-top ',
-            'style' => 'font-family: CENTURY GOTHIC; font-size: 16px; font-weight: 100; padding: 8px; background-color: #000B1F',
-        ],
-    ]);
+    if((Yii::$app->user->identity->id_role != 0) || (Yii::$app->user->isGuest)) {
+        NavBar::begin([
+            'brandLabel' => "<img height='26px' src='../web/Logo.svg'>",
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar-expand-md navbar-dark fixed-top ',
+                'style' => 'font-family: CENTURY GOTHIC; font-size: 16px; font-weight: 100; padding: 8px; background-color: #000B1F',
+            ],
+        ]);
 
 
-    echo Nav::widget([
-        'options' => [
+        echo Nav::widget([
+            'options' => [
                 'class' => 'navbar-nav mx-auto d-flex justify-content-between',
                 'style' => 'width: 85%'],
-        'items' => [
-            ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible'=>Yii::$app->user->identity->id_role == 3],
-            ['label' => 'Домашняя страница', 'url' => ['/site/index']],
-            ['label' => 'Каталог', 'url' => ['/product/index']],
-            ['label' => 'О площадке', 'url' => ['/site/about']],
-            ['label' => 'Связь с нами', 'url' => ['/site/contact']],
-            ['label' => 'Корзина', 'url' => ['/cart/index'], 'visible'=>!Yii::$app->user->isGuest],
-            ['label' => 'Регистрация', 'url' => ['/site/signup'], 'visible'=>Yii::$app->user->isGuest],
-            Yii::$app->user->isGuest
-                ? ['label' => 'Войти', 'url' => ['/site/login']]
-                : '<li class="nav-item">'
+            'items' => [
+                ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible' => Yii::$app->user->identity->id_role == 3],
+                ['label' => 'Домашняя страница', 'url' => ['/site/index']],
+                ['label' => 'Каталог', 'url' => ['/product/index']],
+                ['label' => 'О площадке', 'url' => ['/site/about']],
+                ['label' => 'Связь с нами', 'url' => ['/site/contact']],
+                ['label' => 'Корзина', 'url' => ['/cart/index'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Регистрация', 'url' => ['/site/signup'], 'visible' => Yii::$app->user->isGuest],
+                Yii::$app->user->isGuest
+                    ? ['label' => 'Войти', 'url' => ['/site/login']]
+                    : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
                         'Выйти из аккаунта',
@@ -64,10 +65,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     )
                     . Html::endForm()
                     . '</li>'
-        ]
-    ]);
-    NavBar::end();
-    ?>
+            ]
+        ]);
+        NavBar::end();
+    }
+    else { ?>
+        <p style="padding: 16px; font-size: 20px; font-family: CENTURY GOTHIC;">
+            Вы заблокированы!
+        </p>
+    <?php } ?>
 
 </header>
 

@@ -17,6 +17,7 @@ $this->title = 'Каталог';
     <h1 class="mt-4"><?= Html::encode($this->title) ?></h1>
 
     <p>
+        <?php if((Yii::$app->user->identity->id_role == 3) || (Yii::$app->user->identity->id_role == 2)){?>
         <?= Html::a('Добавить товар', ['create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
@@ -54,5 +55,6 @@ $this->title = 'Каталог';
         ],
     ]); ?>
 
+    <?php } ?>
 
 </div>

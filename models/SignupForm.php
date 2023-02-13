@@ -73,6 +73,7 @@ class SignupForm extends Model
         $user = new User();
         $user->login = $this->login;
         $user->email = $this->email;
+        $user->phone = $this->phone;
         $user->date_born = $this->date_born;
         $user->id_city = $this->id_city;
         $user->id_currency = $this->id_currency;

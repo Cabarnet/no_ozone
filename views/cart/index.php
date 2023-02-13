@@ -16,9 +16,9 @@ $this->title = 'Корзина';
 
     <h1 class="mt-4"><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Кнопка скоро будет удалена', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<!--    <p>-->
+<!--        --><?//= Html::a('Кнопка скоро будет удалена', ['create'], ['class' => 'btn btn-success']) ?>
+<!--    </p>-->
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
