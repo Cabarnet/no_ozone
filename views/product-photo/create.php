@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\ProductPhoto $model */
 
-$this->title = 'Create Product Photo';
-$this->params['breadcrumbs'][] = ['label' => 'Product Photos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Добавить фото';
+// $get=$_GET['get'];
+// var_dump($get);
 ?>
 <div class="product-photo-create">
 

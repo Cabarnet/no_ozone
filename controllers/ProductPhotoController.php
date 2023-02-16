@@ -7,6 +7,7 @@ use app\models\ProductPhotoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProductPhotoController implements the CRUD actions for ProductPhoto model.
@@ -70,7 +71,11 @@ class ProductPhotoController extends Controller
         $model = new ProductPhoto();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($this->request->isPost) {
+                $model->load($this->request->post());
+                $model->photo = UploadedFile::getInstance($model, 'photo');
+                $model->photo->saveAs("photos/{$model->photo->baseName}.{$model->photo->extension}");
+                $model->save(false);
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {

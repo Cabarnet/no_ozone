@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var app\models\Product $model */
+/** @var app\models\ProductPhoto $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
@@ -12,15 +13,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true])?>
+
+    <?= $form->field($model, 'photo')->fileInput() ?>
     
     <?= $form->field($model, 'discount')->textInput() ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'characteristic')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'way_of_use')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 

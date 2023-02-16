@@ -9,6 +9,7 @@ use yii\grid\GridView;
 /** @var yii\web\View $this */
 /** @var app\models\ProductSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
+/** @var $data \app\models\Product[] */
 
 $this->title = 'Каталог';
 ?>
@@ -23,37 +24,52 @@ $this->title = 'Каталог';
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <?php
+    if(Yii::$app->user->identity->id_role == 3){
+        GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                //['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
-            'name',
-            'id_category',
-            'id_photo',
-            //'is_discount',
-            'discount',
-            //'flag',
-            'description:ntext',
-            'characteristic',
-            'way_of_use',
-            //'link',
-            'rating',
-            //'date_of_creation',
-            //'date_of_update',
-            'author',
-            'price',
-            //'id_company',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Product $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                'id',
+                'name',
+                'id_category',
+                'id_photo',
+                'photo',
+                //'is_discount',
+                'discount',
+                //'flag',
+                'description:ntext',
+                'characteristic',
+                'way_of_use',
+                //'link',
+                'rating',
+                //'date_of_creation',
+                //'date_of_update',
+                'author',
+                'price',
+                //'id_company',
+                [
+                    'class' => ActionColumn::className(),
+                    'urlCreator' => function ($action, Product $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'id' => $model->id]);
+                     }
+                ],
             ],
-        ],
-    ]); ?>
+        ]);
+    }?>
+
+    <?php
+    echo \yii\widgets\ListView::widget([
+        'dataProvider' => $data,
+        'itemView' => '_show_item',
+    ]);
+    ?>
+    <script>
+        let summary = document.querySelector(".summary");
+        summary.remove();
+    </script>
 
     <?php } ?>
 

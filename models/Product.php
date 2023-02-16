@@ -16,6 +16,7 @@ use Yii;
  * @property int $flag
  * @property string $description
  * @property string $characteristic
+ * @property string $photo
  * @property string $way_of_use
  * @property string $link
  * @property float $rating
@@ -48,12 +49,12 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'discount', 'description', 'characteristic', 'way_of_use', 'link', 'author', 'price'], 'required'],
+            [['name', 'discount', 'description', 'characteristic', 'link', 'author', 'price', 'photo'], 'required'],
             [['id_category', 'id_photo', 'is_discount', 'discount', 'flag', 'author', 'price', 'id_company'], 'integer'],
             [['description'], 'string'],
             [['rating'], 'number'],
             [['date_of_creation', 'date_of_update'], 'safe'],
-            [['name', 'characteristic', 'way_of_use', 'link'], 'string', 'max' => 255],
+            [['name', 'characteristic', 'photo', 'way_of_use', 'link'], 'string', 'max' => 255],
             [['id_category'], 'exist', 'skipOnError' => true, 'targetClass' => Category::class, 'targetAttribute' => ['id_category' => 'id']],
             [['id_photo'], 'exist', 'skipOnError' => true, 'targetClass' => ProductPhoto::class, 'targetAttribute' => ['id_photo' => 'id']],
             [['id_company'], 'exist', 'skipOnError' => true, 'targetClass' => Company::class, 'targetAttribute' => ['id_company' => 'id']],
@@ -69,6 +70,7 @@ class Product extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Название',
             'id_category' => 'Категории',
+            'photo' => 'Основное Фото',
             'id_photo' => 'Фото',
             'is_discount' => 'Есть ли скидка',
             'discount' => 'Скидка',

@@ -82,3 +82,10 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.list-view{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}

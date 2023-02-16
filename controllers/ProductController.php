@@ -3,11 +3,16 @@
 namespace app\controllers;
 
 use yii;
+use yii\filters\AccessControl;
 use app\models\Product;
 use app\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use yii\data\ActiveDataProvider;
+
+// $id_producta = $id;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -40,11 +45,18 @@ class ProductController extends Controller
     public function actionIndex()
     {
         $searchModel = new ProductSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        //$dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Product::find(),
+            'pagination' => [
+                'pageSize' => 6,
+            ],
+            ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            "data" => $dataProvider,
         ]);
     }
 
@@ -71,7 +83,11 @@ class ProductController extends Controller
         $model = new Product();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($this->request->isPost) {
+                $model->load($this->request->post());
+                $model->photo = UploadedFile::getInstance($model, 'photo');
+                $model->photo->saveAs("photos/{$model->photo->baseName}.{$model->photo->extension}");
+                $model->save(false);
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -132,6 +148,15 @@ class ProductController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+    public function actionAddPhoto()
+    {
+        // $id_producta;
+        // Header("Location:yii\helpers\Url::to(['/product-photo/create'])?get=$id_producta");
+        //return $this->redirect(yii\helpers\Url::to(['/product-photo/create']));
+    }
+
 
     public function actionRole()
     {
