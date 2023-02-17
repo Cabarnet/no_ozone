@@ -89,3 +89,58 @@ a.desc:after {
     flex-wrap: wrap;
     margin-top: 40px;
 }
+
+.product-card{
+    width: 240px; 
+    display: flex; 
+    flex-direction: column; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin-right: 50px; 
+    margin-bottom: 50px;
+    font-family: Garamond;
+}
+
+.product_photo{
+    display: flex;
+    justify-content: center;
+    height: 130px;
+}
+
+.product_photo_img{
+    height: 100%;
+    overflow: hidden;
+}
+
+.product_name{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.product_price{
+    display: flex; 
+    flex-direction: column; 
+    align-self: flex-end;
+}
+
+.product_price_content{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    display: flex; 
+    flex-direction: row; 
+    align-self: flex-end;
+    font-weight: 400;
+}
+
+.product_discount{
+    display: flex; 
+    flex-direction: column; 
+    align-self: flex-end;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    color:#c55;
+}
