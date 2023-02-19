@@ -15,23 +15,24 @@ $this->title = 'Каталог';
 ?>
 <div class="product-index">
 
-    <h1 class="mt-4"><?= Html::encode($this->title) ?></h1>
+    <div class="product-upper">
+        <h1 class="mt-4"><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?php if((Yii::$app->user->identity->id_role == 3) || (Yii::$app->user->identity->id_role == 2)){?>
-        <?= Html::a('Добавить товар', ['create'], ['class' => 'btn btn-primary']) ?>
-    </p>
+        <p>
+            <?php if((Yii::$app->user->identity->id_role == 3) || (Yii::$app->user->identity->id_role == 2)){?>
+                <?= Html::a('Добавить товар', ['create'], ['class' => 'btn btn-primary']) ?>
+            <?php } ?>
+        </p>
+    </div>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?php
-    if(Yii::$app->user->identity->id_role == 3){
+    <?php if(Yii::$app->user->identity->id_role == 3){
         GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
                 //['class' => 'yii\grid\SerialColumn'],
-
                 'id',
                 'name',
                 'id_category',
@@ -62,7 +63,7 @@ $this->title = 'Каталог';
 
     <?php
     echo \yii\widgets\ListView::widget([
-        'dataProvider' => $data,
+        'dataProvider' => $dataProvider,
         'itemView' => '_show_item',
     ]);
     ?>
@@ -71,6 +72,5 @@ $this->title = 'Каталог';
         summary.remove();
     </script>
 
-    <?php } ?>
 
 </div>

@@ -83,64 +83,125 @@ a.desc:after {
     outline: none;
 }
 
+.product-upper{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-upper a{
+    margin-top: 32.5px;
+    width: 300px;
+}
+
 .list-view{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
+    background: #f7f7ff;
+    border-radius: 30px;
 }
 
 .product-card{
-    width: 240px; 
+    margin: 25px;
+    height: 400px;
+    width: 270px;
     display: flex; 
     flex-direction: column; 
     border-radius: 5px; 
     padding: 10px; 
-    margin-right: 50px; 
-    margin-bottom: 50px;
-    font-family: Garamond;
 }
 
 .product_photo{
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    align-items: center;
     height: 130px;
 }
 
 .product_photo_img{
-    height: 100%;
-    overflow: hidden;
+    height: 130px;
 }
 
 .product_name{
+    font-family: Trebuchet MS;
     margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.product_description{
+    font-family: Trebuchet MS;
+    margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 15px;
+    height: 90px;
 }
 
 .product_price{
+    font-family: Trebuchet MS;
     display: flex; 
     flex-direction: column; 
     align-self: flex-end;
+    font-size: 15px;
 }
 
 .product_price_content{
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 100;
     display: flex; 
     flex-direction: row; 
     align-self: flex-end;
-    font-weight: 400;
+    color: #001935;
 }
 
 .product_discount{
     display: flex; 
-    flex-direction: column; 
+    flex-direction: row;
     align-self: flex-end;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 20px;
-    color:#c55;
+    font-size: 16px;
+    color:rgb(255, 0, 149);
+}
+
+.product_buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product_more_button{
+    font-size: 14px;
+    border: 0px solid #212529;
+    background: none;
+    color: #5e5e5e;
+}
+
+.product_buy_button{
+    width: 160px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #0051ff;
+    border-radius: 15px;
+    background: #0051ff;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.product_buy_button:hover{
+    background: #f7f7ff;
+    color: #001aff;
 }
